@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Archivo', sans-serif;
+  font-size: 15px;
+  background-color: #f5f5f5;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+button {
+  height: 30px;
+  min-width: 100px;
+  position: relative;
+  font-family: 'Archivo', sans-serif;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.main-container {
+  display: flex;
+}
+
+.tools-container {
+  height: 100vh;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ececec;
+  border-right: 2px solid #dedede;
+}
+
+.maze-container {
+  width: 85vw;
+}
+
+.templates-container {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.board-container {
+  height: 78vh;
+  display: flex;
+  align-items: center;
+  padding-right: 1vw;
+  padding-left: 1vw;
+}
+
+.save-container {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#board td {
+  height: 35px;
+  width: 35px;
+  min-width: 35px;
+  min-height: 35px;
+  border: 1px solid black;
+}
+
+.grass {
+  background-color: white;
+}
+
+.wall {
+  background-color: #353b48;
+}
+
+.start {
+  background-color: #eb2f06;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+
+  -webkit-animation: puff-in-center 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: puff-in-center 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+.finish {
+  background-color: #8e44ad;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+
+  -webkit-animation: puff-in-center 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: puff-in-center 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+.path {
+  background-color: #60a3bc;
+}
+
+.template {
+  background-color: crimson;
+  position: relative;
+  cursor: pointer;
+}
+
+.template-delete {
+  position: absolute;
+  color: white;
+  background-color: #353b48;
+}
+
+.tool {
+  width: 14vw;
+  display: grid;
+  row-gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tool-top {
+  margin-top: 1rem;
+}
+
+.tool-bottom {
+  margin-bottom: 1rem;
+}
+
+.params-form {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  margin-top: 3px;
+  height: 30px;
+  min-width: 150px;
+  box-sizing: border-box;
+  border: 1px solid #b4b4b4;
+  border-radius: 5px;
+  padding-left: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.input-checkbox {
+  width: 15px;
+  height: 15px;
+  margin-top: 0;
+}
+
+.info-plate {
+  width: 14vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.algorithm-info {
+  display: grid;
+  row-gap: 1rem;
+  border: 2px solid #dedede;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.algorithm-info {
+  padding: 5px;
+}
+
+.result-buttons {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.save-container button {
+  width: 150px;
+}
+
+.hide {
+  display: none;
+}
+
+.author {
+  text-align: center;
+}
+
+.linkedin-social {
+  margin-right: 5px;
+  color: #3c6382;
+  cursor: pointer;
+}
+
+.github-social {
+  margin-left: 5px;
+  color: #3c6382;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: #1abc9c;
+  box-shadow: 0 3px #0d5f4e;
+}
+
+.button-primary:hover {
+  background-color: #18ceab;
+}
+
+.button-secondary {
+  background-color: #3c6382;
+  box-shadow: 0 3px #172631;
+}
+
+.button-secondary:hover {
+  background-color: #467499;
+}
+
+.button-secondary:disabled {
+  background-color: #46749999;
+  box-shadow: 0 3px #17263199;
+}
+
+button:active {
+  box-shadow: none;
+  top: 3px;
+}
+
+@-webkit-keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #0000006b;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  width: 40%;
+  margin: auto;
+}
+
+.modal-container {
+  display: grid;
+  row-gap: 1rem;
+}
+
+ul {
+  margin: 0;
+}
+
+.modal-title {
+  margin-top: 0;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Genetic Algorithm Solves a Maze</title>
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="src/css/styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="tools-container">
+        <div class="tool tool-top">
+          <form class="params-form">
+            <div class="form-group">
+              <label for="population-size">Population size: </label>
+              <input type="number" class="input-field" id="population-size" value="160" />
+            </div>
+            <div class="form-group">
+              <label for="chromosome-length">Chromosome length: </label>
+              <input type="number" class="input-field" id="chromosome-length" value="100" />
+            </div>
+            <div class="form-group">
+              <label for="crossover-probability">Crossover probability: </label>
+              <input type="number" class="input-field" id="crossover-probability" value="0.8" step="0.01" />
+            </div>
+            <div class="form-group">
+              <label for="mutation-probability">Mutation probability: </label>
+              <input type="number" class="input-field" id="mutation-probability" value="0.01" step="0.01" />
+            </div>
+            <div class="form-group">
+              <label for="desired-fitness">Desired fitness value: </label>
+              <input type="number" class="input-field" id="desired-fitness" value="1" step="0.01" />
+            </div>
+            <div class="form-group">
+              <label for="timeout-steps">Timeout between steps: </label><br />
+              <input type="number" class="input-field" id="timeout-steps" value="0.01" step="0.01" />
+            </div>
+            <div class="form-group">
+              <label for="timeout-generations">Timeout between generations: </label>
+              <input type="number" class="input-field" id="timeout-generations" value="0.1" step="0.01" />
+            </div>
+            <div class="form-group">
+              <label for="only-last-step">Finish only with a last step: </label>
+              <input type="checkbox" class="form-input input-checkbox" id="only-last-step" checked />
+            </div>
+            <button id="button-start" class="button-primary button-push-top">Start</button>
+          </form>
+          <div class="info-plate hide">
+            <div class="algorithm-info">
+              <div class="font-bold">Generation: <span id="generation-info">0</span></div>
+              <div class="font-bold">Fitness: <span id="fitness-info">0</span></div>
+              <div>Population size: <span id="population-size-info">0</span></div>
+              <div>Chromosome length: <span id="chromosome-length-info">0</span></div>
+              <div>Crossover rate: <span id="crossover-rate-info">0%</span></div>
+              <div>Mutation rate: <span id="mutation-rate-info">0%</span></div>
+            </div>
+          </div>
+          <button id="button-stop" class="button-secondary button-push-top hide">Stop</button>
+          <div class="result-buttons hide">
+            <button id="button-restart" class="button-primary button-push-top">Restart</button>
+            <button id="button-back" class="button-secondary button-push-top">Back to Editor</button>
+          </div>
+        </div>
+        <div class="tool tool-bottom">
+          <button id="button-info" class="button-secondary button-push-bottom">App Info</button>
+          <div class="author">Developed by Ivan Bilous</div>
+          <div class="author">
+            <a href="https://www.linkedin.com/in/ivanbilous/" target="_blank">
+              <i class="bx bx-sm bxl-linkedin-square linkedin-social"></i>
+            </a>
+            <a href="https://github.com/1vanBilous" target="_blank"
+              ><i class="bx bx-sm bxl-github github-social"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="maze-container">
+        <div class="templates-container"></div>
+        <div class="board-container" onContextMenu="return false;">
+          <table id="board"></table>
+        </div>
+        <div class="save-container">
+          <button id="button-save" class="button-secondary button-push-top">Save Template</button>
+          <button id="button-clear" class="button-secondary button-push-top">Clear Board</button>
+        </div>
+      </div>
+    </div>
+    <div id="modal-info" class="modal">
+      <div class="modal-content">
+        <div><h2 class="modal-title">Hello! 👋</h2></div>
+        <div class="modal-container">
+          <div>
+            This application solves 2D mazes using genetic algorithm under the hood with visualization of the process.
+            Mazes are built by user and can be saved into browser local storage for future use.
+          </div>
+          <div>
+            Controls:
+            <ul>
+              <li>Left mouse button click - build wall</li>
+              <li>Mouse wheel click - set start</li>
+              <li>Right mouse button click - set finish</li>
+              <li>CTRL+S or UI corresponding button - save template</li>
+            </ul>
+          </div>
+          <div>
+            You can set desired algorithm parameters in corresponding form in the left-hand-side. Feel free to play with
+            parameters to see how the algorithm behaves!
+          </div>
+          <div>
+            Source code can be found on
+            <a href="https://github.com/1vanBilous/genetic-algorithm-solves-maze-browser" target="_blank">GitHub</a>, in
+            case you want to explore it.
+          </div>
+          <button id="button-close-modal" class="button-primary">Continue</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="src/js/app.js"></script>
+</html>

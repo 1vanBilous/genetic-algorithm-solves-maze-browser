@@ -1,0 +1,19 @@
+{
+  "name": "genetic-algorithm-solves-maze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
